@@ -7,6 +7,11 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byName">
 
+    <context:component-scan base-package="com.newhome">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller" />
+    </context:component-scan>
+
         <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
             <property name="locations">
                 <list>
@@ -50,19 +55,13 @@
     <bean id="sqlSessionFactoryName" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:sqlmap-config.xml" />
+        <property name="mapperLocations" value="classpath:com/newhome/*/mapper/*.xml"/>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryName" />
-        <property name="basePackage" value="com.newhome.dao" />
+        <property name="basePackage" value="com.newhome.*.mapper" />
     </bean>
-
-
-    <context:component-scan base-package="com.newhome">
-        <context:exclude-filter type="annotation"
-                                expression="org.springframework.stereotype.Controller" />
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
-    </context:component-scan>
 
 
 </beans>
