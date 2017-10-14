@@ -8,4 +8,5 @@ import com.newhome.user.model.UserTest;
 public interface UserService {
 
     int login(String userName, String password);
+
 }

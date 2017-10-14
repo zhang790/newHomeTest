@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @create 2017/9/16
  */
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserTestMapper userTestMapper;
@@ -24,4 +24,5 @@ public class UserServiceImpl implements UserService{
         System.out.println(userTest.getAccount() + ":" + userTest.getPassword());
         return 0;
     }
+
 }

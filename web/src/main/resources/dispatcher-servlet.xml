@@ -12,35 +12,48 @@
                     http://www.springframework.org/schema/task
                     http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <context:component-scan base-package="com.newhome">
+    <!-- 启用注解式事务 必须要这里启用 -->
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler />
+    <task:annotation-driven />
+
+    <context:component-scan base-package="com.newhome.*">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
 
-    <mvc:view-resolvers>
-        <mvc:content-negotiation>
-            <mvc:default-views>
-                <bean
-                        class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
-                    <property name="extractValueFromSingleKeyModel"
-                              value="true" />
-                    <property name="objectMapper">
-                        <bean
-                                class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
-                        </bean>
-                    </property>
-                </bean>
-            </mvc:default-views>
-        </mvc:content-negotiation>
-        <mvc:jsp cache-views="false" prefix="/WEB-INF/"
-                 suffix=".jsp" />
-    </mvc:view-resolvers>
+    <!--<mvc:view-resolvers>-->
+        <!--<mvc:content-negotiation>-->
+            <!--<mvc:default-views>-->
+                <!--<bean-->
+                        <!--class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">-->
+                    <!--<property name="extractValueFromSingleKeyModel"-->
+                              <!--value="true" />-->
+                    <!--<property name="objectMapper">-->
+                        <!--<bean-->
+                                <!--class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">-->
+                        <!--</bean>-->
+                    <!--</property>-->
+                <!--</bean>-->
+            <!--</mvc:default-views>-->
+        <!--</mvc:content-negotiation>-->
+        <!--<mvc:jsp cache-views="false" prefix="/WEB-INF/"-->
+                 <!--suffix=".jsp" />-->
+    <!--</mvc:view-resolvers>-->
 
-    <!-- 启用注解式事务 必须要这里启用 -->
-    <mvc:annotation-driven />
+    <bean id="viewResolverCommon"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="order" value="1" />
+    </bean>
 
-    <task:annotation-driven />
+
+
+
 
 
 </beans>
