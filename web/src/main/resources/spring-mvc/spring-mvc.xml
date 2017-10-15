@@ -50,10 +50,4 @@
                   value="org.springframework.web.servlet.view.JstlView" />
         <property name="order" value="1" />
     </bean>
-
-
-
-
-
-
 </beans>

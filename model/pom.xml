@@ -27,6 +27,7 @@
 
     </dependencies>
 
+    <!-- 用于将xml文件和资源文件一起进行编译-->
     <build>
         <resources>
             <resource>
