@@ -1,3 +1,5 @@
+package com.newhome.util.bean;
+
 import java.io.Serializable;
 
 /**
