@@ -1,5 +1,7 @@
 package com.newhome.user.service;
 
+import com.newhome.util.bean.ReturnData;
+
 /**
  * 用户接口
  */
@@ -12,7 +14,7 @@ public interface UserService {
     * @param
     * @date
     */
-    void  addAndUpdateUserBatch();
+    ReturnData addAndUpdateUserBatch();
 
 
     /**

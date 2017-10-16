@@ -3,6 +3,7 @@ package com.newhome.user.service.impl;
 import com.newhome.user.mapper.UserTestMapper;
 import com.newhome.user.model.UserTest;
 import com.newhome.user.service.UserService;
+import com.newhome.util.bean.ReturnData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +23,10 @@ public class UserServiceImpl implements UserService {
     private UserTestMapper userTestMapper;
 
     @Override
-    public void addAndUpdateUserBatch() {
+    public ReturnData addAndUpdateUserBatch() {
+
+        ReturnData returnData = new ReturnData();
+        returnData.setCode(ReturnData.FAIL);
 
         List<UserTest> userTestList = new ArrayList<>();
         UserTest userTestOne = new UserTest();
@@ -43,6 +47,9 @@ public class UserServiceImpl implements UserService {
 
         //再进行更新用户
         userTestMapper.updateUserBatch("xxxxx","测试账号1");
+
+        returnData.setCode(ReturnData.SUCCESS);
+        return  returnData;
 
     }
 
