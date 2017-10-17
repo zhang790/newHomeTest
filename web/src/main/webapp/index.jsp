@@ -5,7 +5,7 @@ charset=UTF-8"
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>layui在线调试</title>
-    <link rel="stylesheet" href="" type="text/css">
+    <link rel="stylesheet" href="WEB-INF/css/layui.css" type="text/css">
     <style>
         body{margin: 10px;}
         .demo-carousel{height: 200px; line-height: 200px; text-align: center;}

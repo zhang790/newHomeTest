@@ -50,4 +50,9 @@
                   value="org.springframework.web.servlet.view.JstlView" />
         <property name="order" value="1" />
     </bean>
+
+    <mvc:resources mapping="/images/**" location="WEB-INF/images/" cache-period="31556926"/>
+    <mvc:resources mapping="/**" location="WEB-INF/" cache-period="31556926"/>
+    <mvc:resources mapping="/css/**" location="WEB-INF/css/" cache-period="31556926"/>
+
 </beans>
