@@ -7,8 +7,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byName">
 
-    <!--数据库操作-->
-    <import resource="spring-datasource.xml"/>
+
     <!--事务处理-->
     <import resource="spring-transtration.xml"/>
     <!--读取配置文件操作-->
