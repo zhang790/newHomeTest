@@ -14,7 +14,7 @@ public interface UserService {
     * @param
     * @date
     */
-    ReturnData addAndUpdateUserBatch();
+    ReturnData addAndUpdateUserBatch(String params);
 
 
     /**

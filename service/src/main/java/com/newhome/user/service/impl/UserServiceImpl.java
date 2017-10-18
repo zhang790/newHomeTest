@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,12 @@ public class UserServiceImpl implements UserService {
     private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
-    public ReturnData addAndUpdateUserBatch() {
+    public ReturnData addAndUpdateUserBatch(String params) {
 
+
+        if (StringUtils.hasText(params)){
+            System.out.println("使用StringUtils的hasText进行判断为空");
+        }
 
         ReturnData returnData = new ReturnData();
         returnData.setCode(ReturnData.FAIL);
