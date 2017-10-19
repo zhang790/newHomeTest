@@ -31,7 +31,7 @@ public interface UserService {
     * @param
     * @date
     */
-    void updateUserBatch();
+    ReturnData updateUserBatch(String params);
 
     /**
     * @author  zhangjiayu
