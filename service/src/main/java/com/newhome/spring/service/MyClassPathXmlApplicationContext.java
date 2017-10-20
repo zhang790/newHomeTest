@@ -31,4 +31,14 @@ public class MyClassPathXmlApplicationContext extends ClassPathXmlApplicationCon
         super.setAllowCircularReferences(false);
 
     }
+
+    //IOCbean前处理
+
+    //IOCbean后处理  进行垃圾字的过滤
+
+    //初始化非延迟加载单例
+
+    //注册监听器
+
+
 }

@@ -21,7 +21,7 @@ public class UserTest extends AbstractServiceTest{
     @Test
     public void testTransaction(){
         String param = "";
-        ReturnData returnData = userService.addAndUpdateUserBatch();
+        ReturnData returnData = userService.addAndUpdateUserBatch("xxx");
         Assert.assertEquals(ReturnData.SUCCESS,returnData.getCode());
     }
 
