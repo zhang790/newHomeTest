@@ -7,12 +7,13 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd" default-autowire="byName">
 
-    <!--数据库操作-->
-    <import resource="spring-datasource.xml"/>
+
     <!--事务处理-->
     <import resource="spring-transtration.xml"/>
     <!--读取配置文件操作-->
     <import resource="spring-properties.xml"/>
+    <!--读取redis配置-->
+    <import resource="spring-redis.xml"/>
 
     <context:component-scan base-package="com.newhome">
         <context:exclude-filter type="annotation"

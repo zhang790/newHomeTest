@@ -7,6 +7,7 @@
         <property name="locations">
             <list>
                 <value>classpath:database/db.properties</value>
+                <value>classpath:database/redis-config.properties</value>
                 <!--<value>classpath:conf/system.properties</vaßlue>-->
                 <!--<value>classpath:conf/messages.properties</value>-->
             </list>

@@ -35,7 +35,7 @@
 <body>
 
 <div id="header">
-    <h1>City Gallery</h1>
+    <h1>欢迎来到主界面</h1>
 </div>
 
 <div id="nav">
