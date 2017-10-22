@@ -207,11 +207,17 @@
             <version>${log4j.version}</version>
         </dependency>
 
+        <!--spring boot 添加 -->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
 
     </dependencies>
 
     <build>
         <plugins>
+            <!--常规编译工具-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -221,6 +227,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <!--mybatis generator 生成插件-->
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
@@ -230,6 +237,11 @@
                             <overwrite>true</overwrite>
                         </configuration>
             </plugin>
+            <!--spring-boot 编译插件-->
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+            <!--</plugin>-->
 
         </plugins>
     </build>
