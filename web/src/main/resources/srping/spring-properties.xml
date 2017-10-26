@@ -8,8 +8,8 @@
             <list>
                 <value>classpath:database/db.properties</value>
                 <value>classpath:database/redis-config.properties</value>
-                <!--<value>classpath:conf/system.properties</vaßlue>-->
-                <!--<value>classpath:conf/messages.properties</value>-->
+                <value>classpath:system.properties</value>
+                <value>classpath:message.properties</value>
             </list>
         </property>
         <property name="fileEncoding">

@@ -19,6 +19,12 @@
             transform: translate(-50%, -50%);
         }
     </style>
+    <script type="text/javascript">
+        function message(){
+            alert("kkk");
+        }
+
+    </script>
 </head>
 <body bgcolor="#727272">
 <form class="layui-form"  action="">
@@ -39,23 +45,31 @@
     </div>
     <div class="layui-form-item" >
         <div class="layui-input-block" >
-            <button class="layui-btn" style="height: 50px;width: 225px; font-size: 20px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
+            <button class="layui-btn" id="submit" onclick="submit()" style="height: 50px;width: 225px; font-size: 20px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
         </div>
     </div>
     </div>
 </form>
-<script src="../layui.js"/>
+<%--<script src="../layui.js"/>--%>
 <script>
-    //Demo
-    layui.use('form', function () {
-        var form = layui.form;
+//    //Demo
+//    layui.use('form', function () {
+//        var form = layui.form;
+//
+//        //监听提交
+//        form.on('submit(formDemo)', function (data) {
+//            layer.msg(JSON.stringify(data.field));
+//            return false;
+//        });
+//    });
 
-        //监听提交
-        form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return false;
-        });
-    });
+
+    //提交
+    function submit(){
+//        _sub = document.getElementById("submit");
+            alert("提交成功");
+    }
 </script>
+
 </body>
 </html>
