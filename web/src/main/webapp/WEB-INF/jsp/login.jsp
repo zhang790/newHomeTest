@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%--<%--%>
+    <%--String basePath = request.getContextPath();--%>
+    <%--String frontEndPath = CommonConstants.FRONT_END_URL;--%>
+    <%--String imagePath = CommonConstants.IMAGE_PATH;--%>
+<%--%>--%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,20 +24,14 @@
             transform: translate(-50%, -50%);
         }
     </style>
-    <script type="text/javascript">
-        function message(){
-            alert("kkk");
-        }
-
-    </script>
 </head>
 <body bgcolor="#727272">
-<form class="layui-form"  action="">
+<form class="layui-form"  action="" id="login_from">
     <div class="center-in-center">
     <div class="layui-form-item">
         <label class="layui-form-label">输入框</label>
         <div class="layui-input-inline" style="height: 45px;width: 225px">
-            <input type="text" name="title" required lay-verify="required" placeholder="请输入你的账号" autocomplete="off"
+            <input type="text" name="account" required lay-verify="required" placeholder="请输入你的账号" autocomplete="off"
                    class="layui-input">
         </div>
     </div>
@@ -50,25 +49,12 @@
     </div>
     </div>
 </form>
-<%--<script src="../layui.js"/>--%>
-<script>
-//    //Demo
-//    layui.use('form', function () {
-//        var form = layui.form;
-//
-//        //监听提交
-//        form.on('submit(formDemo)', function (data) {
-//            layer.msg(JSON.stringify(data.field));
-//            return false;
-//        });
-//    });
-
-
-    //提交
-    function submit(){
-//        _sub = document.getElementById("submit");
-            alert("提交成功");
-    }
+<script src="../layui.js"/>
+<script type="application/x-javascript">
+    $("#submit").on("click", function(){
+        login_from.submit();
+        }
+    );
 </script>
 
 </body>
