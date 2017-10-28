@@ -1,10 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
-<%--<%--%>
-    <%--String basePath = request.getContextPath();--%>
-    <%--String frontEndPath = CommonConstants.FRONT_END_URL;--%>
-    <%--String imagePath = CommonConstants.IMAGE_PATH;--%>
-<%--%>--%>
+<%@ page language="java"  pageEncoding="UTF-8" %>
+<%String basePath = request.getContextPath();%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +22,7 @@
     </style>
 </head>
 <body bgcolor="#727272">
-<form class="layui-form"  action="" id="login_from">
+<form class="layui-form"  action="<%=basePath%>/auth/authUser.json" method="post" id="login_from">
     <div class="center-in-center">
     <div class="layui-form-item">
         <label class="layui-form-label">输入框</label>
@@ -44,9 +40,10 @@
     </div>
     <div class="layui-form-item" >
         <div class="layui-input-block" >
-            <button class="layui-btn" id="submit" onclick="submit()" style="height: 50px;width: 225px; font-size: 20px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
+            <button class="layui-btn" id="submit" onclick="submit()" style="height: 30px;width: 105px; font-size: 13px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
+            <button class="layui-btn" id="register" style="height: 30px;width: 105px; font-size: 12px; background-color: #f44336" lay-submit lay-filter="formDemo">注册</button>
         </div>
-    </div>
+        </div>
     </div>
 </form>
 <script src="../layui.js"/>
@@ -55,7 +52,12 @@
         login_from.submit();
         }
     );
+
 </script>
 
+<script type="ext/x-template">
+
+
+</script>
 </body>
 </html>

@@ -7,7 +7,10 @@ import com.newhome.util.bean.ReturnData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
+
+import java.sql.SQLException;
 
 /**
  * 用户登录校验服务
@@ -15,6 +18,7 @@ import org.springframework.util.StringUtils;
  * @author zhangjiayu zhangjiayu
  * @create 2017/10/28
  */
+@Service
 public class AuthServiceImpl implements AuthService{
 
     @Autowired
@@ -65,11 +69,13 @@ public class AuthServiceImpl implements AuthService{
             userMapper.saveUser(user);
         }catch (Exception ex){
             //异常处理
+            if(ex instanceof SQLException){
+                logger.error("sql异常");
+                throw ex;
+            }
         }
 
-
-
-
-        return null;
+        returnData.setCode(ReturnData.SUCCESS);
+        return returnData;
     }
 }
