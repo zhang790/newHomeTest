@@ -54,10 +54,5 @@
     );
 
 </script>
-
-<script type="ext/x-template">
-
-
-</script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 package com.newhome.user.service;
 
-import com.newhome.util.bean.ReturnData;
+import com.newhome.util.redis.ReturnData;
 
 /**
  * 用户接口

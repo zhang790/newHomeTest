@@ -1,7 +1,7 @@
 package com.newhome.auth.service;
 
 import com.newhome.auth.model.User;
-import com.newhome.util.bean.ReturnData;
+import com.newhome.util.redis.ReturnData;
 
 /**
  * 注册登录Service

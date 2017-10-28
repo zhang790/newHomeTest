@@ -1,4 +1,4 @@
-package com.newhome.util.bean;
+package com.newhome.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -10,7 +10,6 @@ import java.io.ObjectOutputStream;
  * Title:SerializingUtil
  * Description:序列化工具类
  * @Edit_Description:
- * @version:shebao-framelib 1.0
  */
 public class SerializeUtil {
     

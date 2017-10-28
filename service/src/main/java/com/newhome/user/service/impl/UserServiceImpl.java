@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.newhome.user.mapper.UserTestMapper;
 import com.newhome.user.model.UserTest;
 import com.newhome.user.service.UserService;
-import com.newhome.util.bean.ReturnData;
+import com.newhome.util.redis.ReturnData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

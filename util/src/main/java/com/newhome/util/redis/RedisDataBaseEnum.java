@@ -1,4 +1,4 @@
-package com.newhome.util.bean;
+package com.newhome.util.redis;
 
 /**
  * redis数据库选择

@@ -2,7 +2,7 @@ package com.newhome.test.user.com.newhome.test.user.impl;
 
 import com.newhome.test.user.AbstractServiceTest;
 import com.newhome.user.service.UserService;
-import com.newhome.util.bean.ReturnData;
+import com.newhome.util.redis.ReturnData;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

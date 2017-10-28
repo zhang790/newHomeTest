@@ -3,7 +3,8 @@ package com.newhome.auth.service.impl;
 import com.newhome.auth.mapper.UserMapper;
 import com.newhome.auth.model.User;
 import com.newhome.auth.service.AuthService;
-import com.newhome.util.bean.ReturnData;
+import com.newhome.util.redis.RedisUtil;
+import com.newhome.util.redis.ReturnData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class AuthServiceImpl implements AuthService{
     @Autowired
     private UserMapper userMapper;
 
+    @Autowired
+    private RedisUtil redisUtil;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
@@ -32,6 +36,14 @@ public class AuthServiceImpl implements AuthService{
         ReturnData returnData = new ReturnData();
         returnData.setData("");
         returnData.setCode(ReturnData.FAIL);
+
+        //添加redis操作  后期添加MD5加密
+        if (null !=  redisUtil.get(account)){
+            System.out.println((String)redisUtil.get(account));
+            returnData.setCode(ReturnData.SUCCESS);
+            return returnData;
+        }
+
 
         logger.info("用户登录掺入参数  account:{},password:{}",account,password);
 
@@ -46,6 +58,9 @@ public class AuthServiceImpl implements AuthService{
             returnData.setMsg("账号或密码错误");
             return returnData;
         }
+
+        //redis存入  key   Object  expire 过期时间    dataBase 默认数据库
+        redisUtil.set(account,"kkk");
 
         returnData.setCode(ReturnData.SUCCESS);
         return returnData;
@@ -74,6 +89,7 @@ public class AuthServiceImpl implements AuthService{
                 throw ex;
             }
         }
+
 
         returnData.setCode(ReturnData.SUCCESS);
         return returnData;

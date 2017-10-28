@@ -1,4 +1,4 @@
-package com.newhome.util.bean;
+package com.newhome.util.redis;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;

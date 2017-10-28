@@ -1,4 +1,4 @@
-package com.newhome.util.bean;
+package com.newhome.util.redis;
 
 import java.io.Serializable;
 
