@@ -27,7 +27,51 @@
 </head>
 <body>
 <div class="center-in-center">
-
+    <form class="layui-form"  action="<%=basePath%>/auth/authUser.json" method="post" id="login_from">
+        <div class="center-in-center">
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号名称</label>
+                <div class="layui-input-inline" style="height: 45px;width: 225px">
+                    <input type="text" name="account" required lay-verify="required" placeholder="请输入你的账号" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline" style="height: 45px;width: 225px">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">重新输入密码</label>
+                <div class="layui-input-inline" style="height: 45px;width: 225px">
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">电话号码</label>
+                <div class="layui-input-inline" style="height: 45px;width: 225px">
+                    <input type="text" name="phone" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">邮箱</label>
+                <div class="layui-input-inline" style="height: 45px;width: 225px">
+                    <input type="email" name="phone" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+                           class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item" >
+                <div class="layui-input-block" >
+                    <button class="layui-btn" id="submit" onclick="submit()" style="height: 30px;width: 105px; font-size: 13px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
+                    <button class="layui-btn" id="reset" style="height: 30px;width: 105px; font-size: 12px; background-color: #f44336" lay-submit lay-filter="formDemo">重置</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 <script src="../layui.js"/>
 </body>

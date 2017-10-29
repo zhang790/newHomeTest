@@ -47,7 +47,7 @@ public class AuthServiceImpl implements AuthService{
 
         logger.info("用户登录掺入参数  account:{},password:{}",account,password);
 
-        if(StringUtils.hasText(account) || StringUtils.hasText(password)){
+        if(!StringUtils.hasText(account) || !StringUtils.hasText(password)){
             returnData.setMsg("用户名或密码为空");
             return returnData;
         }

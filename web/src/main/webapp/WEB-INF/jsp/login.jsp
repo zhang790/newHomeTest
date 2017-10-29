@@ -27,31 +27,34 @@
     <div class="layui-form-item">
         <label class="layui-form-label">输入框</label>
         <div class="layui-input-inline" style="height: 45px;width: 225px">
-            <input type="text" name="account" required lay-verify="required" placeholder="请输入你的账号" autocomplete="off"
+            <input type="text" name="account"  placeholder="请输入你的账号" autocomplete="off"
                    class="layui-input">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">密码框</label>
         <div class="layui-input-inline" style="height: 45px;width: 225px">
-            <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+            <input type="password" name="password"  placeholder="请输入你的密码" autocomplete="off"
                    class="layui-input">
         </div>
     </div>
     <div class="layui-form-item" >
         <div class="layui-input-block" >
-            <button class="layui-btn" id="submit" onclick="submit()" style="height: 30px;width: 105px; font-size: 13px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
-            <button class="layui-btn" id="register" style="height: 30px;width: 105px; font-size: 12px; background-color: #f44336" lay-submit lay-filter="formDemo">注册</button>
+            <button class="layui-btn " id="submit"   style="height: 30px;width: 105px; font-size: 13px; background-color: #f44336" >登录</button>
+            <button class="layui-btn " id="register" style="height: 30px;width: 105px; font-size: 12px; background-color: #f44336" >注册</button>
         </div>
-        </div>
+    </div>
     </div>
 </form>
 <script src="../layui.js"/>
 <script type="application/x-javascript">
     $("#submit").on("click", function(){
-        login_from.submit();
+        $("#login_from").submit();
         }
     );
+    $("#register").on("click", function () {
+        window.location.href = basePath + "/auth/registerPage.json";
+    });
 
 </script>
 </body>
