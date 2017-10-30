@@ -30,44 +30,44 @@
     <form class="layui-form"  action="" method="post" id="login_from">
         <div class="center-in-center">
             <div class="layui-form-item">
-                <label class="layui-form-label">账号名称</label>
-                <div class="layui-input-inline" style="height: 45px;width: 225px">
-                    <input type="text" name="account" required lay-verify="required" placeholder="请输入你的账号" autocomplete="off"
+                <div class="layui-input-inline" style="height: 45px;width: 260px">
+                    <label class="layui-form-label" style="width: auto">账号名称</label>
+                    <input type="text" name="account" required lay-verify="required" placeholder="请输入你的账号"
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">密码</label>
-                <div class="layui-input-inline" style="height: 45px;width: 225px">
-                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+            <div class="layui-form-item" style="margin-top: 30px" >
+                <div class="layui-input-inline" style="height: 45px;width: 260px">
+                    <label class="layui-form-label" style="width: auto">密码</label>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码"
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">重新输入密码</label>
-                <div class="layui-input-inline" style="height: 45px;width: 225px">
-                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+            <div class="layui-form-item" style="margin-top: 30px">
+                <div class="layui-input-inline" style="height: 45px;width: 260px">
+                    <label class="layui-form-label" style="width: auto">重新输入密码</label>
+                    <input type="password" name="password" required lay-verify="required" placeholder="请输入你的密码"
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">电话号码</label>
-                <div class="layui-input-inline" style="height: 45px;width: 225px">
-                    <input type="text" name="phone" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+            <div class="layui-form-item" style="margin-top: 30px">
+                <div class="layui-input-inline" style="height: 45px;width: 260px">
+                    <label class="layui-form-label" style="width: auto">电话号码</label>
+                    <input type="text" name="phone" required lay-verify="required" placeholder="请输入你的电话"
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">邮箱</label>
-                <div class="layui-input-inline" style="height: 45px;width: 225px">
-                    <input type="email" name="phone" required lay-verify="required" placeholder="请输入你的密码" autocomplete="off"
+            <div class="layui-form-item" style="margin-top: 30px">
+                <div class="layui-input-inline" style="height: 45px;width: 260px">
+                    <label class="layui-form-label" style="width: auto">邮箱</label>
+                    <input type="email" name="phone" required lay-verify="required" placeholder="请输入你的邮箱"
                            class="layui-input">
                 </div>
             </div>
-            <div class="layui-form-item" >
-                <div class="layui-input-block" >
-                    <button class="layui-btn" id="submit" onclick="submit()" style="height: 30px;width: 105px; font-size: 13px; background-color: #f44336" lay-submit lay-filter="formDemo">登录</button>
-                    <button class="layui-btn" id="reset" style="height: 30px;width: 105px; font-size: 12px; background-color: #f44336" lay-submit lay-filter="formDemo">重置</button>
+            <div class="layui-form-item"  style="margin-top: 45px">
+                <div class="layui-input-block" style="height: 45px;width: auto;margin-left: auto">
+                    <button class="layui-btn" type="button" id="submit" onclick="submit()" style="height: 45px;width: 120px; font-size: 22px; background-color: #f44336">注册</button>
+                    <button class="layui-btn" type="button" id="reset" style="height: 45px;width: 120px; font-size: 22px; background-color: #f44336">重置</button>
                 </div>
             </div>
         </div>
