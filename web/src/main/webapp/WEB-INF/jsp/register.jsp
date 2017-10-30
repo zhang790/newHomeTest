@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="center-in-center">
-    <form class="layui-form"  action="<%=basePath%>/auth/authUser.json" method="post" id="login_from">
+    <form class="layui-form"  action="" method="post" id="login_from">
         <div class="center-in-center">
             <div class="layui-form-item">
                 <label class="layui-form-label">账号名称</label>
