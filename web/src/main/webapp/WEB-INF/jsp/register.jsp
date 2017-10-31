@@ -25,7 +25,7 @@
         }
     </style>
 </head>
-<body>
+<body bgcolor="#727272">
 <div class="center-in-center">
     <form class="layui-form"  action="" method="post" id="login_from">
         <div class="center-in-center">
