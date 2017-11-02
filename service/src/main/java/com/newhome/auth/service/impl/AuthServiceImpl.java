@@ -73,14 +73,16 @@ public class AuthServiceImpl implements AuthService{
         returnData.setData("");
         returnData.setCode(ReturnData.FAIL);
 
-        if(StringUtils.hasText(user.getAccount()) || StringUtils.hasText(user.getPassword())
-        || StringUtils.hasText(user.getEmail()) || StringUtils.hasText(user.getPhone())){
-            returnData.setMsg("注册信息存在空值");
-            return returnData;
-        }
+//        if(StringUtils.hasText(user.getAccount()) || StringUtils.hasText(user.getPassword())
+//        || StringUtils.hasText(user.getEmail()) || StringUtils.hasText(user.getPhone())){
+//            returnData.setMsg("注册信息存在空值");
+//            return returnData;
+//        }
 
         //保存用户信息
         try {
+            logger.info("注册信息  账号：{}，密码：{}，email：{}，电话：{}"
+                    , user.getAccount(), user.getPassword(), user.getEmail(), user.getPhone());
             userMapper.saveUser(user);
         }catch (Exception ex){
             //异常处理
@@ -89,7 +91,6 @@ public class AuthServiceImpl implements AuthService{
                 throw ex;
             }
         }
-
 
         returnData.setCode(ReturnData.SUCCESS);
         return returnData;

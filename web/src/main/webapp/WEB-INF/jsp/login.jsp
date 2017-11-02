@@ -54,7 +54,6 @@
 
         var basePath = '<%=basePath%>';
         $("#submit").on("click", function () {
-                console.log("xxx");
                 $.ajax({
                     url:basePath + "/auth/authUser.json",
                     type:'POST',
@@ -63,8 +62,10 @@
                         password:$("#password").valueOf()
                     },
                     success:function(datas){
-                        if (datas == 1){
+                        if (datas.code == 1){
                             window.location.href=basePath + "auth/loginPage.json"
+                        }else{
+                            //提示密码错误
                         }
                     }
 
@@ -72,7 +73,6 @@
             }
         );
         $("#register").on("click", function () {
-            console.log("yyy");
             console.log(basePath);
             window.location.href = basePath + "/auth/registerPage.json";
         });
