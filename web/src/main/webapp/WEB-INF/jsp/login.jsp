@@ -54,24 +54,27 @@
 
         var basePath = '<%=basePath%>';
         $("#submit").on("click", function () {
+                console.log("xxx");
                 $.ajax({
-                    url:basePath + "/auth/authUser.json",
+                    url:basePath + "auth/authUser.json",
                     type:'POST',
                     data:{
                         account:$("#account").val(),
-                        password:$("#password").valueOf()
+                        password:$("#password").val()
                     },
                     success:function(datas){
-                        if (datas.code == 1){
+                        if (datas.code == 0){
                             window.location.href=basePath + "auth/loginPage.json"
                         }else{
                             //提示密码错误
+                            alert("错误");
                         }
                     }
 
                 });
-            }
-        );
+            });
+
+
         $("#register").on("click", function () {
             console.log(basePath);
             window.location.href = basePath + "/auth/registerPage.json";

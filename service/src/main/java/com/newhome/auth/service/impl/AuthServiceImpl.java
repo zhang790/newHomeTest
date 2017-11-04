@@ -41,6 +41,7 @@ public class AuthServiceImpl implements AuthService{
         if (null !=  redisUtil.get(account)){
             System.out.println((String)redisUtil.get(account));
             returnData.setCode(ReturnData.SUCCESS);
+            logger.info("读取redis成功");
             return returnData;
         }
 
@@ -61,7 +62,7 @@ public class AuthServiceImpl implements AuthService{
 
         //redis存入  key   Object  expire 过期时间    dataBase 默认数据库
         redisUtil.set(account,"kkk");
-
+        logger.info("登录成功");
         returnData.setCode(ReturnData.SUCCESS);
         return returnData;
     }
@@ -73,11 +74,11 @@ public class AuthServiceImpl implements AuthService{
         returnData.setData("");
         returnData.setCode(ReturnData.FAIL);
 
-//        if(StringUtils.hasText(user.getAccount()) || StringUtils.hasText(user.getPassword())
-//        || StringUtils.hasText(user.getEmail()) || StringUtils.hasText(user.getPhone())){
-//            returnData.setMsg("注册信息存在空值");
-//            return returnData;
-//        }
+        if(!StringUtils.hasText(user.getAccount()) || !StringUtils.hasText(user.getPassword())
+        || !StringUtils.hasText(user.getEmail()) || !StringUtils.hasText(user.getPhone())){
+            returnData.setMsg("注册信息存在空值");
+            return returnData;
+        }
 
         //保存用户信息
         try {
@@ -85,6 +86,7 @@ public class AuthServiceImpl implements AuthService{
                     , user.getAccount(), user.getPassword(), user.getEmail(), user.getPhone());
             userMapper.saveUser(user);
         }catch (Exception ex){
+            ex.printStackTrace();
             //异常处理
             if(ex instanceof SQLException){
                 logger.error("sql异常");
@@ -92,6 +94,7 @@ public class AuthServiceImpl implements AuthService{
             }
         }
 
+        logger.info("保存成功");
         returnData.setCode(ReturnData.SUCCESS);
         return returnData;
     }

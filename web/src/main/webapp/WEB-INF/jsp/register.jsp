@@ -74,8 +74,6 @@
 <script src="../layui.js"></script>
 <script>
     $("#register").on("click", function(){
-
-        console.log("register");
         var basePath = '<%=basePath%>';
         $.ajax({
             url : basePath + "auth/insertUser.json",
@@ -89,10 +87,12 @@
             },
             success : function(datas){
                 console.log(datas);
-                if(datas == 1){
+                if(datas.code == 0){
+                    console.log(datas);
                     window.location,href = basePath + "/auth/registerPage.json";
                 }else {
                     //打出错误信息
+                    alert("错误");
                 }
             }
 
